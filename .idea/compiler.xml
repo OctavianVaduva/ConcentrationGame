@@ -8,7 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Cursul.28_Concentration.Game" />
         <module name="Cursul.28_Concentration.Games" />
+        <module name="Cursul.28_Games" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Cursul.28_Concentration.Games" target="1.5" />
+      <module name="Cursul.28_Games" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

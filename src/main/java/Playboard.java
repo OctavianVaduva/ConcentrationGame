@@ -5,56 +5,56 @@ import static java.lang.Thread.sleep;
 
 public class Playboard {
     // dimensiunile nrRow si nrCol pot fi modificte, dar cel putin o dimensiune trebuie sa fie nr. par.
-    private int nrRow;
-    private int nrCol;
-    public void setNrRow(int setRow) {
-        this.nrRow = setRow;
-    }
+    private int nrRow = 4;
+    private int nrCol = 4;
+//    public void setNrRow(int setRow) {
+//        this.nrRow = setRow;
+//    }
+//
+//    public void setNrCol(int setCol) {
+//        this.nrCol = setCol;
+//    }
 
-    public void setNrCol(int setCol) {
-        this.nrCol = setCol;
-    }
-
-    public void boardSet() { //todo de verificat de ce nu functioneaza
-        char option;
-        int row = 4;
-        int col = 4;
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Tabla de joc are in mod implicit dimensiunea de 4 x 4.\n" +
-                "Daca doriti configurarea tablei pentru alte dimensiuni, apasati tasta 'C'.");
-
-        option = sc.next().charAt(0);
-
-        if(option == 'c' || option == 'C') {
-            System.out.println("Puteti configura tabla de joc pentru maxim 40 carti,  respectiv 20 perechi de semne.\n" +
-                    "Produsul numarului de linii si coloane TREBUIE sa fie CEL MULT EGAL cu 40!" +
-                    "Cel putin una dintre dimensiuni trebuie sa fie un numar par.\n\n");
-            boolean isCorect = false;
-            do {
-                System.out.println("Introduceti nr de linii ale tablei de joc");
-                row = sc.nextInt();
-
-                System.out.println("Introduceti nr de coloane ale tablei de joc");
-                col = sc.nextInt();
-                isCorect = (((row * col) != 0) && ((row * col) % 2 == 0));
-                if (isCorect != true) {
-                    System.out.println("Coordonatele introduse sunt incorecte");
-                }
-            } while (!isCorect);
-        }
-        setNrRow(row); // nrRow se va seta pe valoarea implicita sau pe cea aleasa
-        setNrCol(col);
-    }
-
-    private Symbol[][] hiddenMatrix; // dimensiune mare pentru int sau byte, asa ca folosim enum si creem o noua clasa
-    private Symbol[][] visibleMatrix; // dimensiune mare pentru int sau byte, asa ca folosim enum si creem o noua clasa
+//    public static void boardSet() { //todo de verificat de ce nu functioneaza
+//        char option;
+//        int row = 4;
+//        int col = 4;
+//
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Tabla de joc are in mod implicit dimensiunea de 4 x 4.\n" +
+//                "Daca doriti configurarea tablei pentru alte dimensiuni, apasati tasta 'C'.");
+//
+//        option = sc.next().charAt(0);
+//
+//        if(option == 'c' || option == 'C') {
+//            System.out.println("Puteti configura tabla de joc pentru maxim 40 carti,  respectiv 20 perechi de semne.\n" +
+//                    "Produsul numarului de linii si coloane TREBUIE sa fie CEL MULT EGAL cu 40!" +
+//                    "Cel putin una dintre dimensiuni trebuie sa fie un numar par.\n\n");
+//            boolean isCorect = false;
+//            do {
+//                System.out.println("Introduceti nr de linii ale tablei de joc");
+//                row = sc.nextInt();
+//
+//                System.out.println("Introduceti nr de coloane ale tablei de joc");
+//                col = sc.nextInt();
+//                isCorect = (((row * col) != 0) && ((row * col) % 2 == 0));
+//                if (isCorect != true) {
+//                    System.out.println("Coordonatele introduse sunt incorecte");
+//                }
+//            } while (!isCorect);
+//        }
+//        setnrRow = row; // nrRow se va seta pe valoarea implicita sau pe cea aleasa
+//        nrCol = col;
+//    }
 
     private int calculatedNrOfPairs = (nrRow * nrCol / 2);
-
+//
     public int getCalculatedNrOfPairs() {
         return calculatedNrOfPairs;
     }
+    private Symbol[][] visibleMatrix; // dimensiune mare pentru int sau byte, asa ca folosim enum si creem o noua clasa
+    private Symbol[][] hiddenMatrix; // dimensiune mare pentru int sau byte, asa ca folosim enum si creem o noua clasa
+
 
     Symbol[] symbolList = Symbol.values();
 
@@ -148,17 +148,17 @@ public class Playboard {
         for (int row=0; row < nrRow; row++) {
             line = "+---";
             for (int col=0; col< nrCol; col++) {
-                txt = txt + visibleMatrix[row][col] + "   ";
-//                txt = txt + hiddenMatrix[row][col] + "   "; // pentru afisarea matricei de verificare
-                line = line + "----";
+                txt += visibleMatrix[row][col] + "   ";
+//                txt += hiddenMatrix[row][col] + "   "; // pentru afisarea matricei de verificare
+                line += "----";
                 if(col == nrCol - 1 ) {
-                    line = line + '+';
+                    line += '+';
                 }
             }
             if(row < nrRow-1) { // trasarea semnelor liniilor verticale ale tablei
-                txt = txt + "|\n|   ";
+                txt += "|\n|   ";
             } else {
-                txt = txt + "|\n";
+                txt += "|\n";
             }
         }
 
