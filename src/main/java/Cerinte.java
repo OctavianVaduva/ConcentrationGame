@@ -4,7 +4,7 @@ public interface Cerinte {
 
     reguli de joc:
     tabla de joc 4*4 (default) sau definita de jucator
-       -  8 simboluri !@#$^& pentru joc (sau altceva) pentru fata cartilor
+       -  8 simboluri !@#$^& pentru joc (sau altceva) pentru fata cartilor (vezi configurarea)
        -  1 simbol pentru dosul cartilor
        -  cartile sunt amestecate si ascunse
        -  la fiecare tura se intorc cate 2 carti, oricare dintre cele ascunse, succesiv, selectate de jucator
@@ -20,10 +20,9 @@ public interface Cerinte {
     Clasa player
         - va avea o metoda getCoord  care citeste de la tastatura doua seturi de coordonate
     Clasa playboard
-        - matricea de 4*4 de tip enum
+        - matricea de 4*4 de tip enum (sau dimensiunile setate)
         - metoda initializare tabla - algoritm aleator de amestecare simboluri
             - plasare cate 2 intrari ptr fiecare tip simbol
-            -
         - metoda afisare perechi selectate
         - metoda verificare coincidenta
         - metoda scoatere perechi la coincidenta
