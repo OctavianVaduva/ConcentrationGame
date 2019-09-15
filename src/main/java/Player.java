@@ -17,12 +17,4 @@ public class Player {
             col = sc.nextInt() - 1; //Conversia coordonatelor munerice 1-nrCol in coordonate array 0-(length-1
         return new int[]{row,col};
     }
-
-    public int[] getDimension() {
-        int newRow = 4;
-        int newCol = 4;
-
-        return new int[]{newRow,newCol};
-    }
-
 }
