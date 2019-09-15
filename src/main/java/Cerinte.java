@@ -3,7 +3,7 @@ public interface Cerinte {
     Nume joc "Concentration"
 
     reguli de joc:
-    tabla de joc 4*4
+    tabla de joc 4*4 (default) sau definita de jucator
        -  8 simboluri !@#$^& pentru joc (sau altceva) pentru fata cartilor
        -  1 simbol pentru dosul cartilor
        -  cartile sunt amestecate si ascunse
