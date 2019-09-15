@@ -1,7 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Scanner;
 import java.util.TimeZone;
 
 public class Referee {
@@ -18,8 +17,6 @@ public class Referee {
         long startGameHour;
         long endGameHour;
         long gameTime;
-
-//        playBoard.boardSet(); TODO de verificat de ce nu functioneaza setarea nr ce linii/coloane ale tablei de joc
 
         System.out.println("Aveti de descoperit " + playBoard.getCalculatedNrOfPairs() + " perechi de carti." +
                 "\nLa fiecare tura vei intoarce cate doua carti." +

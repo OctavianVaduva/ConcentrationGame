@@ -8,7 +8,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Referee referee = new Referee(new Playboard(Playboard.nrRow, Playboard.nrCol), new Player(sc));
 
-        //Playboard.boardSet();
         referee.start();
     }
 

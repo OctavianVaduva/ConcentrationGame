@@ -147,25 +147,31 @@ public class Playboard {
 
     @Override
     public String toString() {
-        String txt = "|   ";
-        String line ="";
+        String txt = " |   "; // linia cartilor
+        String line = "  +---"; // liniile de chenar superior si inferior
+        String header = "      "; // numerotarea coloanelor
+        for (int coloana=0; coloana < nrCol; coloana++) {
+            header = header + (coloana+1) + "   ";
+            line += "----";
+            if(coloana == nrCol - 1 ) {
+                line += '+';
+            }
+        }
         for (int row=0; row < nrRow; row++) {
-            line = "+---";
-            for (int col=0; col< nrCol; col++) {
+            if(row==0) {
+                txt = (row + 1) + txt;
+            }
+            for (int col=0; col < nrCol; col++) {
                 txt += visibleMatrix[row][col] + "   ";  // pentru afisarea matricei de descoperire
 //                txt += hiddenMatrix[row][col] + "   "; // pentru afisarea matricei de verificare
-                line += "----";
-                if(col == nrCol - 1 ) {
-                    line += '+';
-                }
             }
-            if(row < nrRow-1) { // trasarea semnelor liniilor verticale ale tablei
-                txt += "|\n|   ";
+            if(row < nrRow - 1) { // trasarea semnelor liniilor verticale ale tablei
+                txt += "|\n" + (row + 2) + " |   ";
             } else {
                 txt += "|\n";
             }
         }
-        txt = "\n" + line + "\n" + txt + line + "\n";
+        txt = "\n" + header + "\n" + line + "\n" + txt + line + "\n";
         return txt;
     }
 }
