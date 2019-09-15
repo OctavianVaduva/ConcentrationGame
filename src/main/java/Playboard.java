@@ -5,7 +5,7 @@ import static java.lang.Thread.sleep;
 
 public class Playboard {
     // dimensiunile nrRow si nrCol pot fi modificte, dar cel putin o dimensiune trebuie sa fie nr. par.
-    protected static  int nrRow;
+    protected static int nrRow;
     protected static int nrCol;
 
     private static void setNrRow(int setRow) {
